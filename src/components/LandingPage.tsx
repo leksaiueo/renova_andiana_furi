@@ -234,7 +234,7 @@ const Navbar = () => {
         >
           <Cat className={isScrolled ? "text-white" : "text-soft-text"} />
           <span className={isScrolled ? "text-white" : "text-soft-text"}>
-            RENOVA ANDIANA FURI
+            MEOW
           </span>
         </a>
 
