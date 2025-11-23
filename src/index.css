@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@theme {
+  --color-soft-cream: #fff5f5;
+  --color-soft-pink: #ffb7b2;
+  --color-soft-accent: #ff9aa2;
+  --color-soft-text: #4a4a4a;
+  --font-inter: "Inter", sans-serif;
+  --font-playfair: "Playfair Display", serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fff5f5; /* soft-cream fallback */
+  color: #4a4a4a; /* soft-text fallback */
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #fff5f5; /* soft-cream */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ffb7b2; /* soft-pink */
+  border-radius: 9999px; /* rounded-full */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ff9aa2; /* soft-accent */
+}
+
+.bg-landingpage {
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.8),
+      rgba(255, 255, 255, 0.8)
+    ),
+    url("/src/assets/LDR.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
