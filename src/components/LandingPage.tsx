@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   motion,
   useScroll,
@@ -13,6 +13,8 @@ import {
   X,
   ChevronLeft,
   ChevronRight,
+  Play,
+  Pause,
 } from "lucide-react";
 
 // --- Data & Assets ---
@@ -112,8 +114,8 @@ const GALLERY_IMAGES = [
 const MUSIC_TRACKS = [
   {
     id: 1,
-    src: "https://open.spotify.com/embed/album/3mhNiz8ZMZHOmqZl04LPR0",
-    title: "Yungkai - Blue",
+    src: "/music/candyrella.mp3",
+    title: "Candyrella",
   },
 ];
 
@@ -336,7 +338,7 @@ const Hero = () => {
             className="inline-flex items-center gap-2 bg-[var(--color-soft-pink)] text-white px-8 py-3 rounded-full font-medium shadow-lg hover:bg-soft-accent transition-colors"
           >
             <Heart className="w-5 h-5 fill-current" />
-            Coba Scroll ke Bawah
+            Oiya ada lagunya tau.., dipojok bawah kiri layar yaa 🎵
             <Heart className="w-5 h-5 fill-current" />
           </motion.a>
         </motion.div>
@@ -568,36 +570,45 @@ const Blog = () => {
 };
 
 const MusicPlayer = () => {
-  return (
-    <section className="py-20 bg-soft-cream relative overflow-hidden">
-      <div className="container mx-auto px-6 relative z-10 max-w-4xl mx-auto text-center">
-        <h2
-          className="text-4xl font-serif font-bold text-soft-text mb-12"
-          style={{
-            fontSize: "36px",
-          }}
-        >
-          Jangan Lupa Dengerin Lagu Ini Yaa ❤️
-        </h2>
+  const audioRef = useRef(null);
+  const [isPlaying, setIsPlaying] = useState(false);
 
-        <div className="relative bg-soft-cream p-12 rounded-3xl shadow-lg flex flex-col items-center gap-6 hover:ring-4 ring-[var(--color-soft-accent)] transition-all duration-300">
-          {MUSIC_TRACKS.map((track) => (
-            <iframe
-              key={track.id}
-              src={track.src}
-              width="100%"
-              height="152"
-              frameBorder="0"
-              allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-              allowFullScreen={true}
-              title={track.title}
-              className="rounded-xl shadow-lg bg-[--color-soft-cream]"
-              style={{ borderRadius: "1rem" }}
-            />
-          ))}
-        </div>
-      </div>
-    </section>
+  const togglePlay = () => {
+    if (!audioRef.current) return;
+    if (isPlaying) {
+      audioRef.current.pause();
+    } else {
+      audioRef.current.play();
+    }
+    setIsPlaying(!isPlaying);
+  };
+
+  return (
+    <div className="container mx-auto px-6 relative z-10 max-w-4xl mx-auto text-center">
+      {MUSIC_TRACKS.map((track) => (
+        <audio
+          key={track.id}
+          src={track.src}
+          ref={audioRef}
+          controls={false}
+          loop
+          className="rounded-xl shadow-lg bg-[--color-soft-cream]"
+          style={{ borderRadius: "1rem", width: "100%" }}
+        />
+      ))}
+
+      <button
+        onClick={togglePlay}
+        className="fixed bottom-4 left-4 bg-[var(--color-soft-pink)] text-white p-3 rounded-full shadow-lg hover:bg-[var(--color-soft-accent)] transition-colors flex items-center justify-center z-50"
+        aria-label={isPlaying ? "Pause music" : "Play music"}
+      >
+        {isPlaying ? (
+          <Pause className="w-6 h-6" />
+        ) : (
+          <Play className="w-6 h-6" />
+        )}
+      </button>
+    </div>
   );
 };
 
