@@ -570,7 +570,7 @@ const Blog = () => {
 };
 
 const MusicPlayer = () => {
-  const audioRef = useRef(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
   const togglePlay = () => {
@@ -585,17 +585,14 @@ const MusicPlayer = () => {
 
   return (
     <div className="container mx-auto px-6 relative z-10 max-w-4xl mx-auto text-center">
-      {MUSIC_TRACKS.map((track) => (
-        <audio
-          key={track.id}
-          src={track.src}
-          ref={audioRef}
-          controls={false}
-          loop
-          className="rounded-xl shadow-lg bg-[--color-soft-cream]"
-          style={{ borderRadius: "1rem", width: "100%" }}
-        />
-      ))}
+      <audio
+        src={MUSIC_TRACKS[0].src}
+        ref={audioRef}
+        controls={false}
+        loop
+        className="rounded-xl shadow-lg bg-[--color-soft-cream]"
+        style={{ borderRadius: "1rem", width: "100%" }}
+      />
 
       <button
         onClick={togglePlay}
