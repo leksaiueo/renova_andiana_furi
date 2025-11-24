@@ -308,23 +308,23 @@ const Hero = () => {
       {/* Background Elements */}
       <motion.div
         style={{ y: y1 }}
-        className="absolute top-20 left-10 w-64 h-64 bg-[var(--color-soft-pink)]/30 rounded-full blur-3xl"
+        className="absolute top-20 left-10 w-48 h-48 sm:w-64 sm:h-64 bg-[var(--color-soft-pink)]/30 rounded-full blur-3xl"
       />
       <motion.div
         style={{ y: y2 }}
-        className="absolute bottom-20 right-10 w-96 h-96 bg-soft-lavender/40 rounded-full blur-3xl"
+        className="absolute bottom-20 right-10 w-64 h-64 sm:w-96 sm:h-96 bg-soft-lavender/40 rounded-full blur-3xl"
       />
-      <div className="container mx-auto px-6 text-center relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-5xl md:text-7xl font-serif font-bold text-soft-text mb-6">
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-serif font-bold text-soft-text mb-4 sm:mb-6">
             Happy Birthday 22th,{" "}
             <span className="text-soft-accent">Sayangkuu ❤️</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-600 mb-8 max-w-5xl mx-auto">
+          <p className="text-base sm:text-xl md:text-2xl text-gray-600 mb-6 sm:mb-8 max-w-xl sm:max-w-5xl mx-auto">
             Aku nggak tahu gimana hidupku sebelum ketemu sayang, tapi yang jelas
             sekarang semuanya lebih indah karena ada sayang. Hari ini makin
             cantik, makin lucu, dan makin bikin aku nggak mau jauh-jauh dari
@@ -335,7 +335,7 @@ const Hero = () => {
             href="#gallery"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-flex items-center gap-2 bg-[var(--color-soft-pink)] text-white px-8 py-3 rounded-full font-medium shadow-lg hover:bg-soft-accent transition-colors"
+            className="inline-flex items-center gap-2 bg-[var(--color-soft-pink)] text-white px-6 py-2 rounded-full font-medium shadow-lg hover:bg-soft-accent transition-colors"
           >
             <Heart className="w-5 h-5 fill-current" />
             Oiya ada lagunya tau.., dipojok bawah kiri layar yaa 🎵
@@ -349,7 +349,7 @@ const Hero = () => {
         transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 text-soft-pink/50"
       >
-        <Cat className="w-12 h-12" />
+        <Cat className="w-10 h-10 sm:w-12 sm:h-12" />
       </motion.div>
     </section>
   );
