@@ -180,51 +180,59 @@ const TESTIMONIALS = [
 const BLOG_POSTS = [
   {
     id: 1,
-    title: "Senja dan Kamu",
-    excerpt: "Di antara jingga yang memudar, wajahmu abadi.",
+    title: "The Fault in Our Stars",
+    excerpt: "John Green.",
     date: "Nov 28, 2025",
     content:
-      "Langit merona memeluk petang,\nRindu padamu kian menerjang.\nSenja berlalu tinggalkan bayang,\nNamun cintaku takkan menghilang.\nKaulah puisi yang tak usai kutulis,\nDalam setiap detak, namamu terlukis.",
+      "Kadang aku merasa cinta datang seperti sesuatu yang pelan-pelan menyentuh pintu hidupku, lalu tanpa sadar memenuhi seluruh ruangnya. Kamu adalah hal yang tidak pernah kupikir akan kutemukan, tapi justru menjadi sesuatu yang tak bisa kulepaskan. Mencintaimu bukan keputusan, melainkan sesuatu yang terjadi dengan sendirinya.",
   },
   {
     id: 2,
-    title: "Bintang Penunjuk Arah",
-    excerpt: "Kaulah cahaya di tengah gelapnya malamku.",
+    title: "Jane Eyre",
+    excerpt: "Charlotte Brontë",
     date: "Nov 28, 2025",
     content:
-      "Di luas samudra kehidupan,\nAku terombang-ambing tanpa tujuan.\nHingga kau hadir sebagai bintang,\nMembawa terang, menghapus bimbang.\nBersamamu, arahku pasti,\nMenuju dermaga cinta yang abadi.",
+      "Aku mencintaimu dengan ikatan yang tidak terlihat tetapi selalu ada—lebih kuat dari jarak, lebih dalam dari keraguan. Rasanya seolah hatiku mengenalmu bahkan sebelum pikiranku sempat mengerti apa arti kehilangan atau memiliki. Kamu menjadi bagian dari diriku yang tak bisa dipisahkan.",
   },
   {
     id: 3,
-    title: "Rumah",
-    excerpt: "Bukan tempat, melainkan seseorang.",
+    title: "The Notebook",
+    excerpt: "Nicholas Sparks",
     date: "Nov 28, 2025",
     content:
-      "Aku lelah mencari tempat berteduh,\nHingga kutemukan hatimu yang teduh.\nTak perlu megah, tak perlu mewah,\nCukup kasihmu yang tak pernah goyah.\nDi pelukmu, aku pulang,\nSegala resah pun hilang.",
+      "Cinta ini bukan tentang besar atau megahnya momen yang kita lewati, melainkan tentang hal-hal kecil yang menjahit hidup kita bersama. Setiap tawa, setiap percakapan, setiap hening yang kita bagi—semuanya membentuk cerita yang bahkan waktu pun tidak mampu menghapusnya.",
   },
   {
     id: 4,
-    title: "Melodi Hati",
-    excerpt: "Setiap detak adalah nada untukmu.",
+    title: "The Alchemist",
+    excerpt: "Paulo Coelho",
     date: "Nov 28, 2025",
     content:
-      "Dalam hening malam yang syahdu,\nTerdengar lirih nyanyian rindu.\nBukan dari bibir yang berucap,\nMelainkan hati yang berharap.\nAgar kau dengar melodi ini,\nTentang cinta yang takkan mati.",
+      "Ketika aku mencintaimu, dunia yang tadinya biasa saja menjadi sesuatu yang seolah selalu membimbingku kembali padamu. Setiap langkahku, setiap keputusanku, terasa seperti perjalanan panjang yang akhirnya menemukan tujuannya: hatimu.",
   },
   {
     id: 5,
-    title: "Jejak Langkah",
-    excerpt: "Bersamamu, setiap langkah adalah petualangan.",
+    title: "Call Me by Your Name",
+    excerpt: "André Aciman",
     date: "Nov 28, 2025",
     content:
-      "Kita berjalan di atas bumi yang sama,\nMengukir kisah dalam setiap masa.\nJejak kakimu dan jejak kakiku,\nMenyatu dalam irama waktu.\nTak peduli seberapa jauh perjalanan,\nAsal bersamamu, itu tujuan.",
+      "Ada bagian dari dirimu yang mengisi ruang-ruang sunyi dalam diriku, yang tidak pernah kusadari kosong sebelum kamu datang. Kehadiranmu membuat waktu terasa berbeda—lebih lembut, lebih berani, lebih jujur. Seolah kamu memperlihatkan sisi diriku yang hanya muncul saat aku bersamamu.",
   },
   {
     id: 6,
-    title: "Pelangi Setelah Hujan",
-    excerpt: "Kau adalah warna dalam hidupku.",
+    title: "Norwegian Wood",
+    excerpt: "Haruki Murakami",
     date: "Nov 28, 2025",
     content:
-      "Saat badai datang menerpa,\nKau hadir tanpa banyak sapa.\nMembawa warna di langit kelabu,\nMenghapus sedih, mengusir ragu.\nKaulah pelangi yang kunanti,\nIndah, nyata, dan berarti.",
+      "Kamu datang seperti melodi yang samar di malam yang sunyi—perlahan tapi tidak pernah hilang. Dan semakin aku mencoba memahami diriku, semakin aku tahu bahwa ada bagian dari dunia ini yang hanya terasa benar ketika kamu ada di dalamnya.",
+  },
+  {
+    id: 7,
+    title: "Kutipan Cinta dan sang Master",
+    excerpt: "ChatGPT",
+    date: "Nov 28, 2025",
+    content:
+      "Dalam kesunyian yang sering kali tidak mampu kutafsirkan, hadirmu menjelma sebagai bisik lembut yang memulihkan. Engkau bukan sekadar sosok yang singgah dalam perjalanan hidupku, melainkan denyut yang menata ulang seluruh irama hati. Setiap tuturmu menghadirkan keteduhan, setiap tatapmu seakan membuka ruang baru dalam diriku—ruang yang selama ini tersembunyi di balik lapisan-lapisan luka dan keraguan. \n\n Mencintaimu bukan perkara keinginan semata, melainkan sebuah kesadaran yang tumbuh dari kedalaman batin; kesadaran bahwa di antara begitu banyak kemungkinan yang ditawarkan dunia, engkaulah yang membuat segala sesuatu tampak lebih jernih, lebih utuh, dan lebih layak diperjuangkan. \n\n Apabila cinta adalah perjalanan, maka engkaulah arah yang selalu membawaku pulang—tempat di mana segala resah menemukan alasan untuk mereda, dan segala harap menemukan keberaniannya untuk kembali tumbuh.",
   },
 ];
 
@@ -243,7 +251,7 @@ const Navbar = () => {
   const navLinks = [
     { name: "Home", href: "#home" },
     { name: "Gallery", href: "#gallery" },
-    { name: "Little Poetry", href: "#blog" },
+    { name: "Litle Quote", href: "#blog" },
   ];
 
   return (
@@ -537,7 +545,7 @@ const Blog = () => {
               fontSize: "36px",
             }}
           >
-            Puisi Kecil Untuk Sayangku
+            Kutipan Kecil Untuk Sayangku
           </h2>
           <div className="w-20 h-1 bg-[var(--color-soft-pink)] mx-auto rounded-full" />
         </div>
