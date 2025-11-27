@@ -353,8 +353,10 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <h1 className="text-3xl sm:text-5xl md:text-7xl font-serif font-bold text-soft-text mb-4 sm:mb-6">
-            Happy Birthday 22th 🎂,{" "}
+          <h2 className="text-3xl sm:text-5xl md:text-7xl font-serif font-bold text-soft-text mb-4 sm:mb-6">
+            Happy Birthday 22th 🎂{" "}
+          </h2>
+          <h1 className="text-2xl sm:text-3xl md:text-7xl font-serif font-bold text-soft-text mb-4 sm:mb-6">
             <span className="text-soft-accent">Renova Andiana Furi</span>
           </h1>
           <p className="text-base sm:text-xl md:text-2xl text-gray-600 mb-6 sm:mb-8 max-w-xl sm:max-w-5xl mx-auto">
