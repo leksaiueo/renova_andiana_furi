@@ -21,92 +21,107 @@ import {
 const GALLERY_IMAGES = [
   {
     id: 1,
-    url: "/assets/a.webp",
+    url: "/assets/gambar/a.webp",
     title: "Morning Cuddles",
   },
   {
     id: 2,
-    url: "/assets/y.jpg",
+    url: "/assets/gambar/y.jpg",
     title: "Sleepy Head",
   },
   {
     id: 3,
-    url: "/assets/c.webp",
+    url: "/assets/gambar/c.webp",
     title: "Basket Case",
   },
   {
     id: 4,
-    url: "/assets/d.jpg",
+    url: "/assets/gambar/d.jpg",
     title: "Triple Trouble",
   },
   {
     id: 5,
-    url: "/assets/e.webp",
+    url: "/assets/gambar/e.webp",
     title: "Flower Power",
   },
   {
     id: 6,
-    url: "/assets/f.jpg",
+    url: "/assets/gambar/f.jpg",
     title: "Sofa King Cute",
   },
   {
     id: 7,
-    url: "/assets/g.webp",
+    url: "/assets/gambar/g.webp",
     title: "Tiny Paws",
   },
   {
     id: 8,
-    url: "/assets/h.jpg",
+    url: "/assets/gambar/h.jpg",
     title: "Curious Eyes",
   },
   {
     id: 9,
-    url: "/assets/i.webp",
+    url: "/assets/gambar/i.webp",
     title: "Snowball",
   },
   {
     id: 10,
-    url: "/assets/j.jpg",
+    url: "/assets/gambar/j.jpg",
     title: "Little Tiger",
   },
   {
     id: 11,
-    url: "/assets/k.jpg",
+    url: "/assets/gambar/k.jpg",
     title: "Wild & Free",
   },
   {
     id: 12,
-    url: "/assets/l.jpg",
+    url: "/assets/gambar/l.jpg",
     title: "Moonlight Dreams",
   },
   {
     id: 13,
-    url: "/assets/t.jpg",
+    url: "/assets/gambar/t.jpg",
     title: "Blooming Love",
   },
   {
     id: 14,
-    url: "/assets/n.jpg",
+    url: "/assets/gambar/n.jpg",
     title: "Nature's Touch",
   },
   {
     id: 15,
-    url: "/assets/o.jpg",
+    url: "/assets/gambar/o.jpg",
     title: "Cozy Nap",
   },
   {
     id: 16,
-    url: "/assets/v.jpg",
+    url: "/assets/gambar/v.jpg",
     title: "Baby Blue",
   },
   {
     id: 17,
-    url: "/assets/q.jpg",
+    url: "/assets/gambar/q.jpg",
     title: "Whiskers",
   },
   {
     id: 18,
-    url: "/assets/r.jpg",
+    url: "/assets/gambar/r.jpg",
+    title: "Pink Petals",
+  },
+  {
+    id: 19,
+    url: "/assets/gambar/w.jpg",
+    title: "Pink Petals",
+  },
+  {
+    id: 20,
+    url: "/assets/gambar/y.jpg",
+    title: "Pink Petals",
+  },
+  {
+    id: 21,
+    url: "/assets/gambar/za.jpg",
     title: "Pink Petals",
   },
 ];
@@ -114,8 +129,18 @@ const GALLERY_IMAGES = [
 const MUSIC_TRACKS = [
   {
     id: 1,
-    src: "/music/candyrella.mp3",
-    title: "Candyrella",
+    src: "/assets/music/jatuh_suka.mp3",
+    title: "Jatuh Suka",
+  },
+  {
+    id: 2,
+    src: "/assets/music/komang.mp3",
+    title: "Komang",
+  },
+  {
+    id: 3,
+    src: "/assets/music/sepatu.mp3",
+    title: "Sepatu",
   },
 ];
 
@@ -321,8 +346,8 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
         >
           <h1 className="text-3xl sm:text-5xl md:text-7xl font-serif font-bold text-soft-text mb-4 sm:mb-6">
-            Happy Birthday 22th,{" "}
-            <span className="text-soft-accent">Sayangkuu ❤️</span>
+            Happy Birthday 22th 🎂,{" "}
+            <span className="text-soft-accent">Renova Andiana Furi</span>
           </h1>
           <p className="text-base sm:text-xl md:text-2xl text-gray-600 mb-6 sm:mb-8 max-w-xl sm:max-w-5xl mx-auto">
             Aku nggak tahu gimana hidupku sebelum ketemu sayang, tapi yang jelas
@@ -572,24 +597,47 @@ const Blog = () => {
 const MusicPlayer = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    const handleEnded = () => {
+      if (currentTrackIndex < MUSIC_TRACKS.length - 1) {
+        setCurrentTrackIndex((prev) => prev + 1);
+      } else {
+        // Loop the last track (komang.mp3)
+        audio.currentTime = 0;
+        audio.play();
+      }
+    };
+
+    audio.addEventListener("ended", handleEnded);
+    return () => audio.removeEventListener("ended", handleEnded);
+  }, [currentTrackIndex]);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    if (isPlaying) {
+      audio.play();
+    } else {
+      audio.pause();
+    }
+  }, [isPlaying, currentTrackIndex]);
 
   const togglePlay = () => {
-    if (!audioRef.current) return;
-    if (isPlaying) {
-      audioRef.current.pause();
-    } else {
-      audioRef.current.play();
-    }
     setIsPlaying(!isPlaying);
   };
 
   return (
     <div className="container mx-auto px-6 relative z-10 max-w-4xl mx-auto text-center">
       <audio
-        src={MUSIC_TRACKS[0].src}
+        src={MUSIC_TRACKS[currentTrackIndex].src}
         ref={audioRef}
         controls={false}
-        loop
         className="rounded-xl shadow-lg bg-[--color-soft-cream]"
         style={{ borderRadius: "1rem", width: "100%" }}
       />
