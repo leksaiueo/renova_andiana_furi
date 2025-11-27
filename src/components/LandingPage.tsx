@@ -604,40 +604,6 @@ const Blog = () => {
   );
 };
 
-const FlowerAnimation = () => {
-  return (
-    <section
-      className="relative overflow-hidden bg-landingpage"
-      style={{ height: "200px" }}
-    >
-      {Array.from({ length: 20 }, (_, i) => (
-        <motion.div
-          key={i}
-          className="absolute"
-          style={{ left: `${Math.random() * 100}%` }}
-          initial={{ opacity: 0, scale: 0, y: 100 }}
-          animate={{ opacity: 1, scale: 1, y: -200 }}
-          transition={{
-            duration: 3,
-            delay: i * 0.5,
-            repeat: Infinity,
-            repeatType: "loop",
-            ease: "easeInOut",
-          }}
-        >
-          <svg width="60" height="60" viewBox="0 0 60 60">
-            <circle cx="30" cy="30" r="6" fill="#ffb6c1" />
-            <circle cx="20" cy="20" r="8" fill="#ff69b4" />
-            <circle cx="40" cy="20" r="8" fill="#ff69b4" />
-            <circle cx="20" cy="40" r="8" fill="#ff69b4" />
-            <circle cx="40" cy="40" r="8" fill="#ff69b4" />
-          </svg>
-        </motion.div>
-      ))}
-    </section>
-  );
-};
-
 const MusicPlayer = () => {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -709,7 +675,6 @@ const LandingPage = () => {
       <Gallery />
       <Testimonials />
       <Blog />
-      <FlowerAnimation />
     </div>
   );
 };
